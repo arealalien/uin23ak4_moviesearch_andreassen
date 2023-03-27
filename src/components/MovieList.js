@@ -6,7 +6,7 @@ const MovieList = (props) => {
             {props.movies.map((movie) => (
                 <div className="">
                     <img className="" src={movie.Poster} alt="movie"></img>
-                    <div className="" onClick={() => props.handleFavouritesClick(movie)}></div>
+                    <div className=""></div>
                 </div>
             ))}
         </>
