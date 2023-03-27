@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './css/main.css';
 import MovieList from './components/MovieList';
-import MovieListHeading from './components/MovieListHeading';
-import Search from './components/Search';
+import Navbar from './components/Navbar';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -39,13 +38,10 @@ const App = () => {
 
     return (
         <div className="App">
-            <div className="">
-                <MovieListHeading heading='Movies'/>
-                <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
-            </div>
-            <div className="">
+            <Navbar searchValue={searchValue} setSearchValue={setSearchValue}></Navbar>
+            <main className="main">
                 <MovieList movies={movies}/>
-            </div>
+            </main>
         </div>
     );
 };

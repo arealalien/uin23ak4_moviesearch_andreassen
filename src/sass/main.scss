@@ -1,0 +1,81 @@
+@import "colors";
+@import "utilities";
+@import "mixins";
+
+/* -
+-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-* |
+
+　. 　　　　　　　　　　　　　　　　　　o 　　　　　+
+　　()　　　　　　+　 Made with ❤ by ~
+　　　　　o 　　　      Areal Alien　　　　.
+　　.　　　　　　　　　　　.
+　　　　　　　　　　 ●▬▬▬๑ 💙 ๑▬▬▬●　　　　　　()
+　　+　　　　　　. 　　　　　　　　　　　　　　o
+　o　　　　　　　　　　　 ▄▀▄　　　▄▀▄　　　　　　　+
+　　　　　　+　　　　　 ▄█░░▀▀▀▀▀░░█▄　　.
+　　　.　　　　　 ▄▄ 　█░░░░░░░░░░░█　▄▄
+　　　　　　.　 █▄▄█　█░░▀░░┬░░▀░░█　█▄▄█　　　o
+
+-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-* |
+- */
+
+/* Table of contents
+
+
+
+*/
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+html, body {
+  margin: 0;
+  width: 100%; height: 100vh;
+  color: hslac($black, 1);
+  font-family: $font-main;
+  background-color: hslac($background, 1);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.view-width {
+  width: calc(100% - 4em);
+  max-width: 1420px;
+}
+
+.navbar {
+  @include flex-center();
+  &-inner {
+
+  }
+}
+.main {
+  padding: 5em 0;
+  gap: 6em;
+  @include flex-col();
+}
+.movie {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: 2em;
+  &-poster {
+    width: 100%;
+  }
+  &-details {
+    padding: 1em 0;
+    gap: 0;
+    @include flex-col-left();
+    &-title, &-year, &-genre, &-director, &-actors, &-rating, &-awards {
+      margin: 0;
+    }
+  }
+}
+.footer {
+
+}
+/* Selection */
+::selection {
+  color: hslac($white, 1);
+  background: hslac($black, 1);
+}

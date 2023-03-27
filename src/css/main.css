@@ -1,3 +1,93 @@
+@charset "UTF-8";
+/* Main */
+/* Colors */
+/* Sizes */
+/* misc */
+/* Fonts */
+/* Flexbox */
+/* Columns */
+/* Spacings */
+/* Media Queries */
+/* -
+-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-* |
+
+　. 　　　　　　　　　　　　　　　　　　o 　　　　　+
+　　()　　　　　　+　 Made with ❤ by ~
+　　　　　o 　　　      Areal Alien　　　　.
+　　.　　　　　　　　　　　.
+　　　　　　　　　　 ●▬▬▬๑ 💙 ๑▬▬▬●　　　　　　()
+　　+　　　　　　. 　　　　　　　　　　　　　　o
+　o　　　　　　　　　　　 ▄▀▄　　　▄▀▄　　　　　　　+
+　　　　　　+　　　　　 ▄█░░▀▀▀▀▀░░█▄　　.
+　　　.　　　　　 ▄▄ 　█░░░░░░░░░░░█　▄▄
+　　　　　　.　 █▄▄█　█░░▀░░┬░░▀░░█　█▄▄█　　　o
+
+-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-*-*-~*~-*-*-~*~*-*-~*~-* |
+- */
+/* Table of contents
 
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNzcyJ9 */
+
+*/
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  color: hsl(0, 0%, 0%);
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(270, 0%, 100%);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.view-width {
+  width: calc(100% - 4em);
+  max-width: 1420px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  padding: 5em 0;
+  gap: 6em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: 2em;
+}
+.movie-poster {
+  width: 100%;
+}
+.movie-details {
+  padding: 1em 0;
+  gap: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.movie-details-title, .movie-details-year, .movie-details-genre, .movie-details-director, .movie-details-actors, .movie-details-rating, .movie-details-awards {
+  margin: 0;
+}
+
+/* Selection */
+::selection {
+  color: hsl(0, 0%, 100%);
+  background: hsl(0, 0%, 0%);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uY3NzIiwiLi4vc2Fzcy9fY29sb3JzLnNjc3MiLCIuLi9zYXNzL191dGlsaXRpZXMuc2NzcyIsIi4uL3Nhc3MvX21peGlucy5zY3NzIiwiLi4vc2Fzcy9tYWluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FDQWhCLFNBQUE7QUFJQSxXQUFBO0FDSkEsVUFBQTtBQUtBLFNBQUE7QUFHQSxVQUFBO0FDUkEsWUFBQTtBQTBCQSxZQUFBO0FBcUNBLGFBQUE7QUFNQSxrQkFBQTtBQ2pFQTs7Ozs7Ozs7Ozs7Ozs7O0dBQUE7QUFpQkE7Ozs7Q0FBQTtBQU1BO0VBQ0UsbUJBQUE7QUpLRjs7QUlIQTtFQUNFLFNBQUE7RUFDQSxXQUFBO0VBQWEsYUFBQTtFQUNiLHFCQUFBO0VBQ0Esa0NGekJVO0VFMEJWLG9DQUFBO0VBQ0EsbUNBQUE7RUFDQSx1QkFBQTtFQUNBLHNCQUFBO0FKT0Y7O0FJSkE7RUFDRSx1QkFBQTtFQUNBLGlCQUFBO0FKT0Y7O0FJSkE7RUQ1Q0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUhvREY7QUlKQTtFQUNFLGNBQUE7RUFDQSxRQUFBO0VEMUJBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLHNCQUFBO0VBQ0EsbUJBQUE7QUhpQ0Y7O0FJUEE7RUFDRSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxRQUFBO0FKVUY7QUlURTtFQUNFLFdBQUE7QUpXSjtBSVRFO0VBQ0UsY0FBQTtFQUNBLE1BQUE7RURoQ0YsYUFBQTtFQUNBLDJCQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtBSDRDRjtBSWJJO0VBQ0UsU0FBQTtBSmVOOztBSVJBLGNBQUE7QUFDQTtFQUNFLHVCQUFBO0VBQ0EsMEJBQUE7QUpXRiIsImZpbGUiOiJtYWluLmNzcyJ9 */
