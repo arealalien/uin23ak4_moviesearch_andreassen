@@ -56,7 +56,9 @@ const App = () => {
         <div className="App">
             <Navbar searchValue={searchValue} setSearchValue={setSearchValue}></Navbar>
             <main className="main">
-                <MovieList movies={movies}/>
+                <section className="main-inner view-width">
+                    <MovieList movies={movies}/>
+                </section>
             </main>
         </div>
     );
