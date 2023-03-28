@@ -31,9 +31,9 @@
 html, body {
   margin: 0;
   width: 100%; height: 100vh;
-  color: hslac($black, 1);
+  color: hslac($white, 1);
   font-family: $font-main;
-  background-color: hslac($background, 1);
+  background-color: hslac($background-dark, 1);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -45,13 +45,57 @@ html, body {
 }
 
 .navbar {
+  top: 0;
+  width: 100%; height: 5em;
+  position: fixed;
+  background-color: hslac($background-dark, .5);
+  backdrop-filter: blur(.75rem);
   @include flex-center();
+  z-index: 100;
   &-inner {
-
+    padding: 0 2em;
+    height: 100%;
+    display: grid;
+    position: relative;
+    grid-template-columns: auto 1fr;
+    &-line-bottom {
+      bottom: 0;
+      width: 100%; height: 1px;
+      position: absolute;
+      background: linear-gradient(90deg, hslac($white, 0) 0, hslac($white, 1) 50%, hslac($white, 0) 100%);
+      z-index: 101;
+    }
+    &-left {
+      @include flex-center();
+      &-logo {
+        height: 3em;
+        path {
+          fill: hslac($white, 1);
+        }
+      }
+    }
+    &-right {
+      @include flex-right();
+      &-input {
+        position: relative;
+        &-inner {
+          padding: 1em 1.6em;
+          color: hslac($white, 1);
+          font-family: $font-main;
+          background-color: hslac($background, .05);
+          border: 1px solid hslac($white, 1);
+          backdrop-filter: blur(.5rem);
+          border-radius: 5rem;
+          &::placeholder {
+            color: hslac($white, 1);
+          }
+        }
+      }
+    }
   }
 }
 .main {
-  padding: 5em 0;
+  padding: 8em 0;
   gap: 6em;
   @include flex-col();
 }
@@ -59,15 +103,50 @@ html, body {
   display: grid;
   grid-template-columns: 20% 1fr;
   gap: 2em;
-  &-poster {
-    width: 100%;
+  &-left {
+    position: relative;
+    @include flex-col-start-center();
+    &-poster {
+      width: 100%;
+      position: relative;
+      border-radius: .75rem;
+      z-index: 2;
+      &-blur {
+        top: 1.35em;
+        width: 100%;
+        position: absolute;
+        transform: scale(.915, .915);
+        filter: blur(1rem);
+        opacity: .33;
+      }
+    }
   }
   &-details {
-    padding: 1em 0;
-    gap: 0;
-    @include flex-col-left();
-    &-title, &-year, &-genre, &-director, &-actors, &-rating, &-awards {
-      margin: 0;
+    margin: 1em 0;
+    position: relative;
+    @include flex-left();
+    &-inner {
+      padding: 2em;
+      width: 100%; height: 100%;
+      position: relative;
+      background-color: hslac($background, .05);
+      backdrop-filter: blur(.15rem);
+      border-radius: .75rem;
+      gap: 0;
+      z-index: 3;
+      @include flex-col-left();
+      &-title {
+        margin: 0 0 .5em 0;
+      }
+      &-year, &-genre, &-director, &-actors, &-rating, &-awards {
+        margin: 0;
+        color: hslac($primary, 1);
+        font-weight: 300;
+        span {
+          color: hslac($grooble, 1);
+          font-weight: 500;
+        }
+      }
     }
   }
 }
@@ -77,5 +156,5 @@ html, body {
 /* Selection */
 ::selection {
   color: hslac($white, 1);
-  background: hslac($black, 1);
+  background: hslac($primary, 1);
 }

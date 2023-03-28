@@ -5,15 +5,20 @@ const MovieList = (props) => {
         <>
             {props.movies.map((movie) => (
                 <section className="movie view-width" key={movie.imdbID}>
-                    <img className="movie-poster" src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Poster+Available"} alt={movie.Title} />
+                    <div className="movie-left">
+                        <img className="movie-left-poster" src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Poster+Available"} alt={movie.Title} />
+                        <img className="movie-left-poster-blur" src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Poster+Available"} alt={movie.Title} />
+                    </div>
                     <div className="movie-details">
-                        <h2 className="movie-details-title">{movie.Title}</h2>
-                        <p className="movie-details-year"><strong>Year:</strong> {movie.Year}</p>
-                        <p className="movie-details-genre"><strong>Genre:</strong> {movie.Genre}</p>
-                        <p className="movie-details-director"><strong>Director:</strong> {movie.Director}</p>
-                        <p className="movie-details-actors"><strong>Actors:</strong> {movie.Actors}</p>
-                        <p className="movie-details-rating"><strong>Rating:</strong> {movie.imdbRating}</p>
-                        <p className="movie-details-awards"><strong>Awards:</strong> {movie.Awards}</p>
+                        <div className="movie-details-inner">
+                            <h2 className="movie-details-inner-title">{movie.Title}</h2>
+                            <p className="movie-details-inner-year"><span>Year:</span> {movie.Year}</p>
+                            <p className="movie-details-inner-genre"><span>Genre:</span> {movie.Genre}</p>
+                            <p className="movie-details-inner-director"><span>Director:</span> {movie.Director}</p>
+                            <p className="movie-details-inner-actors"><span>Actors:</span> {movie.Actors}</p>
+                            <p className="movie-details-inner-rating"><span>Rating:</span> {movie.imdbRating}</p>
+                            <p className="movie-details-inner-awards"><span>Awards:</span> {movie.Awards}</p>
+                        </div>
                     </div>
                 </section>
             ))}
