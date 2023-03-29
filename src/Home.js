@@ -7,27 +7,6 @@ const Home = () => {
     const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
-    const query = "james+bond";
-
-    const getOnLoadMovie = async (query) => {
-        const url = `http://www.omdbapi.com/?s=${query}&type=movie&plot=full&apikey=25dbba7e&r=json&page=1`;
-
-        const response = await fetch(url);
-        const responseJson = await response.json();
-
-        if (responseJson.Search) {
-            const moviesWithInfo = await Promise.all(
-                responseJson.Search.slice(0, 10).map(async (movie) => {
-                    const movieUrl = `http://www.omdbapi.com/?i=${movie.imdbID}&plot=full&apikey=25dbba7e&r=json`;
-                    const movieResponse = await fetch(movieUrl);
-                    const movieResponseJson = await movieResponse.json();
-                    return { ...movie, ...movieResponseJson };
-                })
-            );
-            setMovies(moviesWithInfo);
-        }
-    };
-
     const getMovieRequest = async (searchValue) => {
         const url = `http://www.omdbapi.com/?s=${searchValue}&type=movie&plot=full&apikey=25dbba7e&r=json`;
 
@@ -48,9 +27,13 @@ const Home = () => {
     };
 
     useEffect(() => {
-        getOnLoadMovie(query);
-        getMovieRequest(searchValue);
+        if (!searchValue) {
+            getMovieRequest('James Bond');
+        } else {
+            getMovieRequest(searchValue);
+        }
     }, [searchValue]);
+    useEffect(() => { getMovieRequest(searchValue)}, [])
 
     return (
         <>
