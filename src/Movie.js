@@ -33,11 +33,11 @@ const Home = () => {
                     {movies.map((movie) => (
                         <>
                             <div className="movie-inner-header" key={movie.imdbID}>
-                                <img src={movie.Poster} alt={movie.Title} />
+                                <img src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Poster+Available"} alt={movie.Title} />
                             </div>
                             <div className="movie-inner-info">
                                 <div className="movie-inner-info-left">
-                                    <img src={movie.Poster} alt={movie.Title} />
+                                    <img src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Poster+Available"} alt={movie.Title} />
                                 </div>
                                 <div className="movie-inner-info-right">
                                     <h2 className="movie-inner-info-right-title">{movie.Title}</h2>
