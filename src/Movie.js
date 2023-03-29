@@ -47,6 +47,7 @@ const Home = () => {
                                     <p className="movie-inner-info-right-text"><span>Actors:</span> {movie.Actors}</p>
                                     <p className="movie-inner-info-right-text"><span>Rating:</span> {movie.imdbRating}</p>
                                     <p className="movie-inner-info-right-text"><span>Awards:</span> {movie.Awards}</p>
+                                    <p className="movie-inner-info-right-text"><span>Plot:</span> {movie.Plot}</p>
                                 </div>
                             </div>
                         </>
