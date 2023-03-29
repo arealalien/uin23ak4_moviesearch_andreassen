@@ -33,7 +33,6 @@ const Home = () => {
             getMovieRequest(searchValue);
         }
     }, [searchValue]);
-    useEffect(() => { getMovieRequest(searchValue)}, [])
 
     return (
         <>
