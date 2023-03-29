@@ -15,7 +15,7 @@ const Home = () => {
 
         if (responseJson.Search) {
             const moviesWithInfo = await Promise.all(
-                responseJson.Search.map(async (movie) => {
+                responseJson.Search.slice(0, 10).map(async (movie) => {
                     const movieUrl = `http://www.omdbapi.com/?i=${movie.imdbID}&plot=full&apikey=25dbba7e&r=json`;
                     const movieResponse = await fetch(movieUrl);
                     const movieResponseJson = await movieResponse.json();
